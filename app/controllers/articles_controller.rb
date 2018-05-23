@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
-  # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
   before_action :authenticate_author!, except: [:index, :show]
+  before_action :verify_resource_ownership, only: [:edit, :update, :destroy]
 
   # A frequent practice is to place the standard CRUD actions in each controller
   # in the following order: index, show, new, edit, create, update and destroy.
@@ -21,11 +21,10 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article
   end
 
   def create
-    # @article = Article.new(article_params)
     @article = current_author.articles.create(article_params)
 
     if @article.save
@@ -36,8 +35,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
-
     if @article.update(article_params)
       redirect_to @article
     else
@@ -46,15 +43,14 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
-
     redirect_to articles_path
   end
 
   private
-    def article_params
-        params.require(:article).permit(:title, :text)
-    end
+
+  def article_params
+    params.require(:article).permit(:title, :text)
+  end
 
 end
