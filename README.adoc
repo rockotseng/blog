@@ -25,26 +25,27 @@ Things you may want to cover:
 
 == TODO
 
-* [ ] Domain: Author
+* [x] Domain: Post (New Post, Show Post, List Posts, Update Post, Delete Post)
+(http://guides.rubyonrails.org/getting_started.html)
+* [x] Domain: Comment
+(http://guides.rubyonrails.org/getting_started.html)
+* [x] Domain: Author
 (https://github.com/plataformatec/devise#getting-started)
 (https://guides.railsgirls.com/devise)
 (https://ihower.tw/rails/auth.html#sec0)
-* [ ] Registration (https://www.railstutorial.org/book/sign_up)
-* [ ] Authentication (https://www.railstutorial.org/book/basic_login)
+* [x] Registration (https://www.railstutorial.org/book/sign_up)
+* [x] Authentication (https://www.railstutorial.org/book/basic_login)
 * [ ] Facebook login
 (https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview)
 (https://revs.runtime-revolution.com/working-with-facebook-using-devise-omniauth-koala-and-rails-5-cde5d032de02)
 (http://lichen-blog.logdown.com/posts/2542955)
-* [ ] Domain: Post (New Post, Show Post, List Posts, Update Post, Delete Post)
-(http://guides.rubyonrails.org/getting_started.html)
-* [ ] Domain: Comment
-(http://guides.rubyonrails.org/getting_started.html)
 * [ ] Post Paging
 * [ ] Unit test & Integration test
 * [ ] Heroku & Postgres (https://www.railstutorial.org/book/beginning#sec-heroku_setup)
 * [ ] Dockerize & GCP (Container Engine or Compute Engine)
 * [ ] Ajax call instead of form submit
 * [ ] Theme & Font
+* [ ] Add name to author
 
 == Reference
 
