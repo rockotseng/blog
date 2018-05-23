@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  before_action :authenticate_author!, except: [:index, :show]
 
   # A frequent practice is to place the standard CRUD actions in each controller
   # in the following order: index, show, new, edit, create, update and destroy.
@@ -24,7 +25,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    # @article = Article.new(article_params)
+    @article = current_author.articles.create(article_params)
 
     if @article.save
       redirect_to @article
