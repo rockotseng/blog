@@ -1,5 +1,7 @@
 = README
 
+:sectnums:
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
@@ -23,6 +25,21 @@ Things you may want to cover:
 
 * ...
 
+== Requirements
+
+* 以 Ruby on Rails 開發簡單部落格, 詳細規格如下:
+* 此部落格含 Author (作者)、Post (文章)、Comment (評論留言) 三基本元素
+* 網站使用者可以分頁瀏覽文章列表
+* 網站使用者可以檢視個別文章內容與其所屬評論
+* 網站使用者可在檢視個別文章內容時留下評論留言
+* 網站使用者可以註冊與登入成為 Author (可以 Devise 套件完成)
+* Author 可以建立、編輯與刪除個別文章
+* 前述功能完成後，最後調整 Auther 的登入授權改以 Facebook OAuth 完成
+* 以上開發的專案程式請置於 Github，以讓我們了解你的開發過程。
+* 以上開發的網站，請將結果部署至 Heroku，以讓我們看到你的開發成果。
+* (加分項目) 將以上開發的網站，以 Docker 打包，部署至 GCP (Google cloud platform)，
+讓系統運行在 Container Engine 或 Compute Engine 之上。
+
 == TODO
 
 * [x] Domain: Post (New Post, Show Post, List Posts, Update Post, Delete Post)
@@ -31,16 +48,19 @@ Things you may want to cover:
 (http://guides.rubyonrails.org/getting_started.html)
 * [x] Domain: Author
 (https://github.com/plataformatec/devise#getting-started)
-(https://guides.railsgirls.com/devise)
 (https://ihower.tw/rails/auth.html#sec0)
 * [x] Registration (https://www.railstutorial.org/book/sign_up)
 * [x] Authentication (https://www.railstutorial.org/book/basic_login)
+* [x] Resource ownership checking
+* [ ] Unit test & Integration test
+(http://guides.rubyonrails.org/testing.html)
+(http://guides.rubyonrails.org/active_record_validations.html)
+(http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html)
 * [ ] Facebook login
 (https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview)
 (https://revs.runtime-revolution.com/working-with-facebook-using-devise-omniauth-koala-and-rails-5-cde5d032de02)
 (http://lichen-blog.logdown.com/posts/2542955)
 * [ ] Post Paging
-* [ ] Unit test & Integration test
 * [ ] Heroku & Postgres (https://www.railstutorial.org/book/beginning#sec-heroku_setup)
 * [ ] Dockerize & GCP (Container Engine or Compute Engine)
 * [ ] Ajax call instead of form submit
@@ -49,7 +69,6 @@ Things you may want to cover:
 
 == Reference
 
-* http://guides.rubyonrails.org/getting_started.html
 * https://www.railstutorial.org/book
 * http://guides.rubyonrails.org/working_with_javascript_in_rails.html
 * http://guides.rubyonrails.org/routing.html
@@ -59,9 +78,11 @@ Things you may want to cover:
 
 == Memo
 
-* Practicing DDD or maybe TDD
-* Built-in DB migration and init
 * The most productive `professional` web framework
-* Full stack ORM
+* Practicing DDD or maybe TDD
+* Super full stack ORM
+* Built-in DB migration and init
 * Bi-directional association in ORM (https://en.wikibooks.org/wiki/Java_Persistence/Relationships)
 * Many to many association (https://en.wikibooks.org/wiki/Java_Persistence/Relationships)
+* Error message in the model
+

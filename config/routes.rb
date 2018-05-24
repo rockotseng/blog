@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :authors
-  get 'welcome/index'
 
   resources :articles do
     resources :comments

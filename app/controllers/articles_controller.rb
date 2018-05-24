@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_action :authenticate_author!, except: [:index, :show]
-  before_action :verify_resource_ownership, only: [:edit, :update, :destroy]
+  before_action :verify_article_ownership, only: [:edit, :update, :destroy]
 
   # A frequent practice is to place the standard CRUD actions in each controller
   # in the following order: index, show, new, edit, create, update and destroy.
@@ -51,6 +51,13 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :text)
+  end
+
+  def verify_article_ownership
+    if params[:id].present?
+      @article = Article.find(params[:id])
+      not_found if current_author != @article.author
+    end
   end
 
 end

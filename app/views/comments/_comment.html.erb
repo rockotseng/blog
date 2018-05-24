@@ -8,8 +8,10 @@
   <%= comment.body %>
 </p>
 
+<% if current_author == @article.author %>
 <p>
-  <%= link_to 'Delete Comment', [comment.article, comment],
+  <%= link_to 'delete comment', [comment.article, comment],
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 </p>
+<% end %>
