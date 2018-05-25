@@ -1,3 +1,5 @@
+<% if comment.persisted? %>
+
 <p>
   <strong>Commenter:</strong>
   <%= comment.commenter %>
@@ -14,4 +16,5 @@
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 </p>
+<% end %>
 <% end %>

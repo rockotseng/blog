@@ -70,9 +70,15 @@ Page size 5
 * [x] Post Paging
 (https://github.com/kaminari/kaminari)
 (https://github.com/mislav/will_paginate)
-* [ ] Heroku & Postgres (https://www.railstutorial.org/book/beginning#sec-heroku_setup)
+* [ ] Heroku & Postgres
+(https://www.railstutorial.org/book/beginning#sec-heroku_setup)
+(https://devcenter.heroku.com/articles/getting-started-with-rails5)
+(https://blog.heroku.com/a-rock-solid-modern-web-stack)
 * [ ] Dockerize & GCP (Container Engine or Compute Engine)
+* [ ] Release Facebook app
 * [ ] Theme & Font
+(https://semantic-ui.com/)
+(https://getuikit.com/)
 * [ ] Ajax call instead of form submit
 * [ ] Add name to author
 
