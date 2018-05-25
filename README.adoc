@@ -52,7 +52,7 @@ Things you may want to cover:
 * [x] Registration (https://www.railstutorial.org/book/sign_up)
 * [x] Authentication (https://www.railstutorial.org/book/basic_login)
 * [x] Resource ownership checking
-* [ ] Unit test & Integration test
+* [x] Unit test & Integration test
 (http://guides.rubyonrails.org/testing.html)
 (http://guides.rubyonrails.org/active_record_validations.html)
 (http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html)
@@ -63,8 +63,8 @@ Things you may want to cover:
 * [ ] Post Paging
 * [ ] Heroku & Postgres (https://www.railstutorial.org/book/beginning#sec-heroku_setup)
 * [ ] Dockerize & GCP (Container Engine or Compute Engine)
-* [ ] Ajax call instead of form submit
 * [ ] Theme & Font
+* [ ] Ajax call instead of form submit
 * [ ] Add name to author
 
 == Reference

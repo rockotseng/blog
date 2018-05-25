@@ -1,11 +1,12 @@
-<h1>Blog Made by Ruby on Rails</h1>
+<h1>Ruby Made Blog</h1>
 
 <% if author_signed_in? %>
 <%= link_to 'New a post', new_article_path %> |
 <%= link_to('Sign out', destroy_author_session_path, method: :delete) %>
 <% else %>
 <%= link_to 'Sign up to write a post', new_registration_path(:author) %> |
-<%= link_to 'Already an author? Log in', new_session_path(:author) %>
+<%= link_to 'Already an author? Log in', new_session_path(:author) %> |
+<%= link_to 'Log in with Facebook', author_facebook_omniauth_authorize_path %>
 <% end %>
 
 <table>
