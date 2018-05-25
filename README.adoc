@@ -1,6 +1,8 @@
-= README
+= A Ruby Made Blog
 
 :sectnums:
+
+This simple blog application is a work from my first week with Ruby and Rails.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -48,19 +50,22 @@ Things you may want to cover:
 (http://guides.rubyonrails.org/getting_started.html)
 * [x] Domain: Author
 (https://github.com/plataformatec/devise#getting-started)
-(https://ihower.tw/rails/auth.html#sec0)
-* [x] Registration (https://www.railstutorial.org/book/sign_up)
-* [x] Authentication (https://www.railstutorial.org/book/basic_login)
+* [x] Registration
+(https://github.com/plataformatec/devise#getting-started)
+* [x] Authentication
+(https://github.com/plataformatec/devise#getting-started)
 * [x] Resource ownership checking
 * [x] Unit test & Integration test
 (http://guides.rubyonrails.org/testing.html)
 (http://guides.rubyonrails.org/active_record_validations.html)
 (http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html)
-* [ ] Facebook login
+* [x] Facebook login
 (https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview)
-(https://revs.runtime-revolution.com/working-with-facebook-using-devise-omniauth-koala-and-rails-5-cde5d032de02)
-(http://lichen-blog.logdown.com/posts/2542955)
+(https://github.com/omniauth/omniauth/wiki/Integration-Testing)
+(https://medium.com/cedarcode/rails-5-2-credentials-9b3324851336)
 * [ ] Post Paging
+(https://github.com/kaminari/kaminari)
+(https://github.com/mislav/will_paginate)
 * [ ] Heroku & Postgres (https://www.railstutorial.org/book/beginning#sec-heroku_setup)
 * [ ] Dockerize & GCP (Container Engine or Compute Engine)
 * [ ] Theme & Font
