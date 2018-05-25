@@ -1,18 +1,18 @@
 class CommentsController < ApplicationController
 
   before_action :authenticate_author!, only: [:destroy]
-  before_action :verify_article_ownership, only: [:destroy]
+  before_action :verify_post_ownership, only: [:destroy]
 
   def create
-    @article = Article.find(params[:article_id])
-    @comment = @article.comments.create(comment_params)
-    redirect_to article_path(@article)
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.create(comment_params)
+    redirect_to post_path(@post)
   end
 
   def destroy
-    @comment = @article.comments.find(params[:id])
+    @comment = @post.comments.find(params[:id])
     @comment.destroy
-    redirect_to article_path(@article)
+    redirect_to post_path(@post)
   end
 
   private
@@ -21,10 +21,10 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:commenter, :body)
   end
 
-  def verify_article_ownership
-    if params[:article_id].present?
-      @article = Article.find(params[:article_id])
-      not_found if current_author != @article.author
+  def verify_post_ownership
+    if params[:post_id].present?
+      @post = Post.find(params[:post_id])
+      not_found if current_author != @post.author
     end
   end
 end

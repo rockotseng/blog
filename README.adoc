@@ -42,6 +42,10 @@ Things you may want to cover:
 * (加分項目) 將以上開發的網站，以 Docker 打包，部署至 GCP (Google cloud platform)，
 讓系統運行在 Container Engine 或 Compute Engine 之上。
 
+=== Pagination
+Plugin used: kaminari
+Page size 5
+
 == TODO
 
 * [x] Domain: Post (New Post, Show Post, List Posts, Update Post, Delete Post)
@@ -63,7 +67,7 @@ Things you may want to cover:
 (https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview)
 (https://github.com/omniauth/omniauth/wiki/Integration-Testing)
 (https://medium.com/cedarcode/rails-5-2-credentials-9b3324851336)
-* [ ] Post Paging
+* [x] Post Paging
 (https://github.com/kaminari/kaminari)
 (https://github.com/mislav/will_paginate)
 * [ ] Heroku & Postgres (https://www.railstutorial.org/book/beginning#sec-heroku_setup)

@@ -5,7 +5,6 @@ class Author < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: %i[facebook]
   has_many :posts, dependent: :destroy
-  has_many :articles, dependent: :destroy
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |author|

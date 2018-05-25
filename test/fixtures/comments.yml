@@ -3,9 +3,9 @@
 one:
   commenter: commenter1@example.com
   body: hi
-  article: one
+  post: one
 
 two:
   commenter: commenter2@example.com
   body: bye
-  article: one
+  post: one

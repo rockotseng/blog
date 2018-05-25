@@ -6,10 +6,10 @@ class AuthorTest < ActiveSupport::TestCase
     @author = authors(:one)
   end
 
-  test 'should delete articles if author is deleted' do
-    article = @author.articles.first
+  test 'should delete posts if author is deleted' do
+    post = @author.posts.first
     @author.destroy
-    assert_nil Article.find_by_id(article.id)
+    assert_nil Post.find_by_id(post.id)
   end
 
 end
