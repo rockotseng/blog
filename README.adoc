@@ -1,4 +1,4 @@
-= A Ruby Made Blog
+= Ruby Made Blog
 
 :sectnums:
 
@@ -81,19 +81,23 @@ Minitest
 Devise + Omniauth
 
 === Pagination
-Plugin used: kaminari
-
+Plugin used: `kaminari`
+....
 Default page size: 5
+....
 
 === Post
-
+....
 Maximum length of title: 50
 Maximum length of text: 280
+....
 
 === Comment
 
+....
 Maximum length of commenter: 70
 Maximum length of body: 140
+....
 
 == TODOs
 
@@ -119,7 +123,8 @@ Maximum length of body: 140
 * [x] Post Pagination
 (https://github.com/kaminari/kaminari)
 (https://github.com/mislav/will_paginate)
-* [x] Heroku & Postgres
+* [x] Postgres
+* [x] Heroku
 (https://devcenter.heroku.com/articles/getting-started-with-rails5)
 * [x] Dockerize
 * [ ] Google Cloud Platform
