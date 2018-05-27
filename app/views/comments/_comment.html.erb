@@ -1,20 +1,18 @@
 <% if comment.persisted? %>
 
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
+  <p>
+    <strong><%= comment.commenter %></strong> says:
+  </p>
 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
+  <p>
+    <%= comment.body %>
+  </p>
 
-<% if current_author == @post.author %>
-<p>
-  <%= link_to 'delete comment', [comment.post, comment],
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-</p>
-<% end %>
+  <% if current_author == @post.author %>
+    <p>
+      <%= link_to 'delete comment', [comment.post, comment],
+                  method: :delete,
+                  data: {confirm: 'Are you sure?'} %>
+    </p>
+  <% end %>
 <% end %>

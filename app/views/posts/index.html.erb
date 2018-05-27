@@ -1,38 +1,37 @@
-<h1>A Ruby Made Blog</h1>
+<div class="header">
+  <h2>Ruby Made Blog</h2>
+</div>
 
-<% if author_signed_in? %>
-<%= link_to 'New a post', new_post_path %> |
-<%= link_to('Sign out', destroy_author_session_path, method: :delete) %>
-<% else %>
-<%= link_to 'Sign up to write a post', new_registration_path(:author) %> |
-<%= link_to 'Already an author? Log in', new_session_path(:author) %> |
-<%= link_to 'Log in with Facebook', author_facebook_omniauth_authorize_path %>
-<% end %>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th>Author</th>
-    <th>Posted at</th>
-    <th colspan="3"></th>
-  </tr>
-
-  <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.text %></td>
-      <td><%= post.author.email %></td>
-      <td><%= post.created_at %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <% if current_author == post.author %>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Delete', post_path(post),
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    </tr>
+<div class="toolbar">
+  <% if author_signed_in? %>
+    <%= link_to 'New a post', new_post_path %> |
+    <%= link_to('Sign out', destroy_author_session_path, method: :delete) %>
+  <% else %>
+    <%= link_to 'Sign up to write a post', new_registration_path(:author) %> |
+    <%= link_to 'Already an author? Log in', new_session_path(:author) %> |
+    <%= link_to 'Log in with Facebook', author_facebook_omniauth_authorize_path %>
   <% end %>
-</table>
+</div>
 
-<%= paginate @posts %>
+<div class="row">
+
+    <% @posts.each do |post| %>
+      <div class="card">
+        <h2><%= post.title %></h2>
+        <h5><%= post.author.email %> posted at <%= post.created_at %></h5>
+        <p><%= post.text %></p>
+        <% if current_author == post.author %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <%= link_to 'Delete', post_path(post),
+                      method: :delete,
+                      data: {confirm: 'Are you sure?'} %>
+        <% end %>
+        <%= link_to 'More...', post_path(post) %>
+      </div>
+    <% end %>
+
+</div>
+
+<div class="footer">
+  <h4><%= paginate @posts %></h4>
+</div>

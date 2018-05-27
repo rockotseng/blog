@@ -20,13 +20,10 @@ https://pure-eyrie-27035.herokuapp.com/
 docker-compose -f docker-compose-test.yml run --rm test
 ....
 
-==== Run & Stop
+==== Run
 
 ....
 docker-compose up web
-....
-....
-docker-compose down
 ....
 
 ==== Database Init & Migration
@@ -35,10 +32,16 @@ docker-compose down
 docker-compose run --rm web bin/rails db:create db:migrate
 ....
 
-==== Rebuild Image
+==== Check
 
 ....
-docker-compose build
+http://localhost:3000
+....
+
+==== Stop
+
+....
+docker-compose down
 ....
 
 === Google Cloud Platform
@@ -82,6 +85,16 @@ Plugin used: kaminari
 
 Default page size: 5
 
+=== Post
+
+Maximum length of title: 50
+Maximum length of text: 280
+
+=== Comment
+
+Maximum length of commenter: 70
+Maximum length of body: 140
+
 == TODOs
 
 * [x] Domain: Post (New Post, Show Post, List Posts, Update Post, Delete Post)
@@ -108,12 +121,10 @@ Default page size: 5
 (https://github.com/mislav/will_paginate)
 * [x] Heroku & Postgres
 (https://devcenter.heroku.com/articles/getting-started-with-rails5)
-* [ ] Dockerize & GCP
-(https://cloud.google.com/ruby/tutorials/bookshelf-on-kubernetes-engine)
+* [x] Dockerize
+* [ ] Google Cloud Platform
 (https://blog.blindside.io/developing-a-ruby-on-rails-app-with-docker-compose-d75b20334634)
-* [ ] Theme & Font
-(https://semantic-ui.com/)
-(https://getuikit.com/)
+* [x] Style
 * [ ] Ajax call instead of form submit
 * [ ] Add name to author
 

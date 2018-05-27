@@ -13,3 +13,81 @@
  *= require_tree .
  *= require_self
  */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+}
+
+.header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+}
+
+.toolbar {
+    margin-top: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 4px;
+    text-decoration: none;
+}
+
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input, textarea {
+    font-size: medium;
+}
+
+input[type=email], input[type=password], input[type=text], textarea {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: #1abc9c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+}
+
+input[type=submit]:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
+}
+
+a {
+    padding: 2px;
+}
