@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  web:
+    build: .
+#    image: blog_web
+    volumes:
+      - .:/code
+#    command: ./docker/wait-for.sh db 5432 bin/rails s -b 0.0.0.0
+    command: >
+        bash -c "./docker/wait-for.sh db 5432
+        && bin/rails assets:clobber assets:precompile
+        && bin/rails s -b 0.0.0.0"
+    ports:
+      - '3000:3000'
+    environment:
+      RAILS_ENV: production
+      RAILS_SERVE_STATIC_FILES: 'true'
+      DATABASE_URL: postgresql://postgres:example@db:5432/blog_production
+    depends_on:
+      - db

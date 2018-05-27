@@ -68,5 +68,3 @@ gem 'omniauth-facebook'
 
 # Pagination
 gem 'kaminari'
-
-ruby '2.5.1'

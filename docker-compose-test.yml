@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9
+    environment:
+      POSTGRES_PASSWORD: example
+  test:
+    build: .
+    command: bash -c "./docker/wait-for.sh db 5432 && bin/rails db:create db:migrate test"
+    volumes:
+      - .:/code
+    environment:
+      RAILS_ENV: test
+      DATABASE_URL: postgresql://postgres:example@db:5432/blog_test
+    depends_on:
+      - db

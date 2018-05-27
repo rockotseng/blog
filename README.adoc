@@ -2,30 +2,50 @@
 
 :sectnums:
 
-This simple blog application is a work from my first week with Ruby and Rails.
+A simple blog application from my first week with Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== Demo
 
-Things you may want to cover:
+=== Heroku
 
-* Ruby version
+....
+https://pure-eyrie-27035.herokuapp.com/
+....
 
-* System dependencies
+=== Docker
 
-* Configuration
+==== Testing
 
-* Database creation
+....
+docker-compose -f docker-compose-test.yml run --rm test
+....
 
-* Database initialization
+==== Run & Stop
 
-* How to run the test suite
+....
+docker-compose up web
+....
+....
+docker-compose down
+....
 
-* Services (job queues, cache servers, search engines, etc.)
+==== Database Init & Migration
 
-* Deployment instructions
+....
+docker-compose run --rm web bin/rails db:create db:migrate
+....
 
-* ...
+==== Rebuild Image
+
+....
+docker-compose build
+....
+
+=== Google Cloud Platform
+
+....
+TBA
+....
 
 == Requirements
 
@@ -42,11 +62,27 @@ Things you may want to cover:
 * (加分項目) 將以上開發的網站，以 Docker 打包，部署至 GCP (Google cloud platform)，
 讓系統運行在 Container Engine 或 Compute Engine 之上。
 
+== Technical Decisions
+
+=== Versions
+Ruby: 2.5.1
+Rails: 5.2
+
+=== Database
+PostgreSQL 9
+
+=== Testing Framework
+Minitest
+
+=== Authentication
+Devise + Omniauth
+
 === Pagination
 Plugin used: kaminari
-Page size 5
 
-== TODO
+Default page size: 5
+
+== TODOs
 
 * [x] Domain: Post (New Post, Show Post, List Posts, Update Post, Delete Post)
 (http://guides.rubyonrails.org/getting_started.html)
@@ -67,24 +103,30 @@ Page size 5
 (https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview)
 (https://github.com/omniauth/omniauth/wiki/Integration-Testing)
 (https://medium.com/cedarcode/rails-5-2-credentials-9b3324851336)
-* [x] Post Paging
+* [x] Post Pagination
 (https://github.com/kaminari/kaminari)
 (https://github.com/mislav/will_paginate)
-* [ ] Heroku & Postgres
-(https://www.railstutorial.org/book/beginning#sec-heroku_setup)
+* [x] Heroku & Postgres
 (https://devcenter.heroku.com/articles/getting-started-with-rails5)
-(https://blog.heroku.com/a-rock-solid-modern-web-stack)
-* [ ] Dockerize & GCP (Container Engine or Compute Engine)
-* [ ] Release Facebook app
+* [ ] Dockerize & GCP
+(https://cloud.google.com/ruby/tutorials/bookshelf-on-kubernetes-engine)
+(https://blog.blindside.io/developing-a-ruby-on-rails-app-with-docker-compose-d75b20334634)
 * [ ] Theme & Font
 (https://semantic-ui.com/)
 (https://getuikit.com/)
 * [ ] Ajax call instead of form submit
 * [ ] Add name to author
 
-== Reference
+== References
 
-* https://www.railstutorial.org/book
+=== Ruby
+* https://ruby.github.io/TryRuby/
+* https://www.ruby-lang.org/en/documentation/quickstart/
+* https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/
+* https://en.wikipedia.org/wiki/Ruby_(programming_language)
+* https://rvm.io/
+
+=== Rails
 * http://guides.rubyonrails.org/working_with_javascript_in_rails.html
 * http://guides.rubyonrails.org/routing.html
 * http://guides.rubyonrails.org/layouts_and_rendering.html
@@ -94,10 +136,10 @@ Page size 5
 == Memo
 
 * The most productive `professional` web framework
-* Practicing DDD or maybe TDD
+* Practicing DDD and maybe TDD
 * Super full stack ORM
-* Built-in DB migration and init
+* Built-in DB migration
 * Bi-directional association in ORM (https://en.wikibooks.org/wiki/Java_Persistence/Relationships)
 * Many to many association (https://en.wikibooks.org/wiki/Java_Persistence/Relationships)
-* Error message in the model
+* Error message stored in the model
 
