@@ -1,0 +1,37 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: ruby-made-blog
+spec:
+  template:
+    metadata:
+      labels:
+        app: ruby-made-blog
+    spec:
+      containers:
+      - name: ruby-made-blog
+        image: asia.gcr.io/ruby-made-blog/web:latest
+        command: ["bash"]
+        args: ["-c", "bin/rails db:migrate && bin/rails assets:precompile && bin/rails s -b 0.0.0.0"]
+        env:
+        - name: DATABASE_URL
+          value: postgresql://postgres:example@127.0.0.1:5432/blog_production
+        - name: RAILS_ENV
+          value: production
+        - name: RAILS_SERVE_STATIC_FILES
+          value: "true"
+        ports:
+        - containerPort: 3000
+      - name: cloudsql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:1.11
+        command: ["/cloud_sql_proxy",
+                  "-instances=ruby-made-blog:asia-east1:blog=tcp:5432",
+                  "-credential_file=/secrets/cloudsql/credentials.json"]
+        volumeMounts:
+          - name: cloudsql-instance-credentials
+            mountPath: /secrets/cloudsql
+            readOnly: true
+      volumes:
+        - name: cloudsql-instance-credentials
+          secret:
+            secretName: cloudsql-instance-credentials

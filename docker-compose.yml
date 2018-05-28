@@ -9,11 +9,9 @@ services:
       - ./tmp/db:/var/lib/postgresql/data
   web:
     build: .
-    volumes:
-      - .:/code
     command: >
         bash -c "./docker/wait-for.sh db 5432
-        && bin/rails assets:clobber assets:precompile
+        && bin/rails assets:precompile
         && bin/rails s -b 0.0.0.0"
     ports:
       - '3000:3000'

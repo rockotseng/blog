@@ -6,6 +6,8 @@ A simple blog application from my first week with Ruby on Rails.
 
 == Demo
 
+NOTE: Facebook login only works on Heroku due to SSL certificate.
+
 === Heroku
 
 ....
@@ -46,8 +48,14 @@ docker-compose down
 
 === Google Cloud Platform
 
+Kubernetes Engine + Cloud SQL
+
 ....
-TBA
+http://35.234.10.11/
+....
+or
+....
+http://blog.rockot.me/
 ....
 
 == Requirements
@@ -127,11 +135,11 @@ Maximum length of body: 140
 * [x] Heroku
 (https://devcenter.heroku.com/articles/getting-started-with-rails5)
 * [x] Dockerize
-* [ ] Google Cloud Platform
-(https://blog.blindside.io/developing-a-ruby-on-rails-app-with-docker-compose-d75b20334634)
+* [x] Google Cloud Platform
+(https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app)
+(https://cloud.google.com/ruby/tutorials/bookshelf-on-kubernetes-engine)
+(https://cloud.google.com/sql/docs/postgres/connect-kubernetes-engine)
 * [x] Style
-* [ ] Ajax call instead of form submit
-* [ ] Add name to author
 
 == References
 
